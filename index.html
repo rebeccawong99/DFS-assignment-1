@@ -1,29 +1,41 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - DFS3</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
 <body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
-<body>
-<div class="content">
-  <span class="word">Circle</span>
-  <span class="redball"></span>
-</div>
+    <div class="content">
+        <span class="word">Circle</span>
+        <span class="redball"></span>
+    </div>
 
 </body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
+<style>
+    .redball {
+        height: 10vh;
+        width: 10vh;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        transform: translate(-5vh, -5vh)
+    }
 
-</body>
-</html>
+    .content {
+        text-align: center;
+    }
+
+    .word {
+        font-size: 20vh;
+        line-height: 100vh;
+        text-align: center;
+    }
+</style>
+<script>
+    var redball = document.querySelector(".redball");
+
+    window.addEventListener("mousemove", event => {
+        var x = event.clientX;
+        var y = event.clientY;
+
+        redball.style.top = y + "px";
+        redball.style.left = x + "px";
+    });
+</script>
